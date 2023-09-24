@@ -8,12 +8,12 @@ module.exports = ({ env }) => {
   const connections = {
     postgres: {
       connection: {
-        connectionString: env('DATABASE_URL'),
+        //connectionString: env('DATABASE_URL'),
         host: env('DATABASE_HOST', 'localhost'),
-        port: env.int('DATABASE_PORT', 5432),
+        port: env.int('DATABASE_PORT', 5433),
         database: env('DATABASE_NAME', 'strapi'),
-        user: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
+        user: env('DATABASE_USERNAME', 'postgres'),
+        password: env('DATABASE_PASSWORD', '0000'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
@@ -34,7 +34,7 @@ module.exports = ({ env }) => {
         filename: path.join(
           __dirname,
           '..',
-          env('DATABASE_FILENAME', '.tmp/data.db')
+          env('DATABASE_FILENAME', 'build/data.db')
         ),
       },
       useNullAsDefault: true,
