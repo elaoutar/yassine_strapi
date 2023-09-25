@@ -8,6 +8,5 @@ module.exports = ({ env }) => ({
         appFilter: "yassine-strapi2",
         roles: ["strapi-super-admin", "strapi-editor", "strapi-author"],
       },
-    },
-    
-  });
+    },    
+});
